@@ -1,25 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/18 20:13:50 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/08/20 21:09:55 by pjedrycz         ###   ########.fr       */
+/*   Created: 2025/08/20 19:35:14 by pjedrycz          #+#    #+#             */
+/*   Updated: 2025/08/20 19:43:03 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Contact.hpp"
+#include "../inc/PhoneBook.hpp"
 
-void	show_record(std::string s)
-{
-	if (s.length() > 10)
-	{
-		s[9] = '.';
-		for (int i = 0; i < 10; i++)
-			std::cout << s[i];
-	}
-	else
-		std::cout << std::setw(10) << s;
-}
+
