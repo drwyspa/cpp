@@ -6,14 +6,14 @@
 #    By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/18 19:18:28 by pjedrycz          #+#    #+#              #
-#    Updated: 2025/08/18 19:33:58 by pjedrycz         ###   ########.fr        #
+#    Updated: 2025/08/21 19:17:42 by pjedrycz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 SRC = megaphone.cpp
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
