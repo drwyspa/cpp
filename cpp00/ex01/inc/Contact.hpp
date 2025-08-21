@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:44:16 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/08/20 21:18:40 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/08/21 19:13:12 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ class Contact
 		void	setNickName(std::string s);
 		void	setNumber(std::string s);
 		void	setSecret(std::string s);
-		void	setId(int n);					////dlaczego tutaj jest blad?
+		void	setId(int n);
 		//Getters//
 		std::string	getFirstName() const;
 		std::string getLastName() const;
 		std::string	getNickName() const;
 		std::string	getNumber() const;
 		std::string getSecret() const;
-		int			getId() const;				////i tutaj tez?
+		int			getId() const;
 
 	private:
 		std::string	mFirstName;
