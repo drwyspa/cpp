@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 20:13:30 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/09/01 19:42:29 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/09/01 20:07:21 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,13 @@ int	PhoneBook::searchContact()
 	if (!(ss >> indx) || indx < 1)
 	{
 		std::cout << "Error: wrong input" << std::endl;
+		return -1;
+	}
+	indx -= 1;
+
+	if (indx < 0 || indx >= PhoneBook::nb_Contact)
+	{
+		std::cout << "Error: wrong index." << std::endl;
 		return -1;
 	}
 
