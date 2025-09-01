@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 19:35:14 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/08/21 19:13:25 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/09/01 19:46:38 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ void	show_commands()
 
 int	main(void)
 {
+	PhoneBook 	PhoneBook;
+	std::string	input;
+	show_commands();
 	while (true)
 	{
 		std::cout << "Choose your action: ";
