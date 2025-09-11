@@ -6,9 +6,16 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 20:49:45 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/09/11 21:00:37 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/09/11 21:25:54 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Zombie.hpp"
 
+
+
+
+Zombie*	zombieHorde(int N, std::string name)
+{
+	
+}
