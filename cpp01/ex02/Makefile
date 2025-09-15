@@ -6,12 +6,12 @@
 #    By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/15 21:16:57 by pjedrycz          #+#    #+#              #
-#    Updated: 2025/09/15 21:36:12 by pjedrycz         ###   ########.fr        #
+#    Updated: 2025/09/15 21:38:30 by pjedrycz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 	greetings
-SRC = 	./src/main.cpp
+SRC = 	main.cpp
 CC = 	c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
