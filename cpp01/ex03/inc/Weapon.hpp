@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 17:48:11 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/09/16 17:58:35 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/09/22 21:58:17 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class	Weapon
 {
 	public:
 		Weapon(const std::string &type);
-		//getter
-		//setter
+		const	std::string &getType() const;
+		void	setType(const std::string& newType);
 	
 	private:
 		std::string	type;
