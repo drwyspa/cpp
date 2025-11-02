@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:55:44 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/10/31 19:08:14 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/02 16:57:07 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class	WrongCat : public WrongAnimal
 		WrongCat(const WrongCat &src);
 		WrongCat &operator=(const WrongCat &src);
 		~WrongCat(void);
+
+		void	makeSound(void) const;
 };
 
 #endif
