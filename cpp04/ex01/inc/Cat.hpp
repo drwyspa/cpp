@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:55:03 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/11/02 18:04:35 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/10 21:40:53 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class	Cat : public Animal
 {
@@ -24,7 +25,12 @@ class	Cat : public Animal
 		Cat	&operator=(const Cat &src);
 		~Cat(void);
 
-		void	makeSound(void) const;	
+		void	makeSound(void) const;
+		virtual	std::string	getType() const;
+		Brain	*getBrain() const;
+
+	private:
+		Brain	*_brain;
 };
 
 #endif

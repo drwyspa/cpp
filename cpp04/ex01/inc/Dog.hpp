@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:55:15 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/10/31 18:30:11 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/10 21:44:36 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class	Dog : public Animal
 {
@@ -24,7 +25,12 @@ class	Dog : public Animal
 		Dog	&operator=(const Dog &src);
 		~Dog(void);
 
-		void	makeSound(void) const;	
+		void	makeSound(void) const;
+		virtual	std::string	getType() const;
+		Brain	*getBrain() const;
+
+	private:
+		Brain	*_brain;
 };
 
 #endif
