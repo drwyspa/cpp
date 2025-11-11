@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:52:38 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/11/02 16:55:23 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:35:32 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Animal
 		Animal	&operator=(const Animal &src);
 		virtual	~Animal(void);
 
-		const std::string&	getAnimalType(void) const;
+		const std::string&	getType(void) const;
 		virtual void	makeSound(void) const;
 
 	protected:

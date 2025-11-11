@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:59:25 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/11/03 21:59:38 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:37:18 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ WrongAnimal::~WrongAnimal(void)
 }
 
 //Getter//
-const std::string&	WrongAnimal::getAnimalType(void) const
+const std::string&	WrongAnimal::getType(void) const
 {
 	return this->_type;
 }

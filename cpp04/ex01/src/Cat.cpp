@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:58:48 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/11/10 22:25:25 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:30:53 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat(void): _brain(new Brain())
 	return;
 }
 
-Cat::Cat(const Cat &src) : Animal(), _brain(NULL)
+Cat::Cat(const Cat &src) : Animal(src), _brain(new Brain(*src._brain))
 {
 	std::cout << "Cat copy constructor called!" << std::endl;
 	*this = src;
@@ -31,10 +31,9 @@ Cat	&Cat::operator=(const Cat &src)
 	std::cout << "Cat assignment overload operator called!" << std::endl;
 	if (this != &src)
 	{
-		this->_type = src._type;
-		if (this->_brain != NULL)
-			delete (this->_brain);
-		this->_brain = new Brain(*src._brain);
+		Animal::operator=(src);
+		delete _brain;
+		_brain = new Brain(*src._brain);
 	}
 	return *this;
 }

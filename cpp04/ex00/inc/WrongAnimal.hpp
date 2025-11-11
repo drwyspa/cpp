@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:55:31 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/11/02 16:55:39 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:35:59 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	WrongAnimal
 		WrongAnimal	&operator=(const WrongAnimal &src);
 		virtual	~WrongAnimal(void);
 
-		const std::string&	getAnimalType(void) const;
+		const std::string&	getType(void) const;
 		virtual void	makeSound(void) const;
 
 	protected:

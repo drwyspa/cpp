@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:59:09 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/11/02 17:25:25 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/11/11 21:36:31 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Animal::~Animal()
 }
 
 //Getter//
-const std::string&	Animal::getAnimalType(void) const
+const std::string&	Animal::getType(void) const
 {
 	return this->_type;
 }

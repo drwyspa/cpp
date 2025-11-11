@@ -6,16 +6,15 @@
 #    By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/29 18:47:14 by pjedrycz          #+#    #+#              #
-#    Updated: 2025/11/03 22:21:58 by pjedrycz         ###   ########.fr        #
+#    Updated: 2025/11/11 21:43:39 by pjedrycz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 	ex00
+NAME = 	ex01
 SRC = 	./src/Animal.cpp \
 		./src/Cat.cpp \
 		./src/Dog.cpp \
-		./src/WrongAnimal.cpp \
-		./src/WrongCat.cpp \
+		./src/Brain.cpp \
 		./src/main.cpp
 CC = 	c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
