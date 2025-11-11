@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/29 18:55:15 by pjedrycz          #+#    #+#             */
+/*   Updated: 2025/11/11 22:20:52 by pjedrycz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
+#ifndef DOG_HPP
+# define DOG_HPP
+
+# include "Animal.hpp"
+# include "Brain.hpp"
+
+class	Dog : public AAnimal
+{
+	public:
+		Dog(void);
+		Dog(const Dog &src);
+		Dog	&operator=(const Dog &src);
+		~Dog(void);
+
+		void	makeSound(void) const;
+		virtual	std::string	getType() const;
+		Brain	*getBrain() const;
+
+	private:
+		Brain	*_brain;
+};
+
+#endif
