@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 21:43:24 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/12/03 22:04:56 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2025/12/05 22:01:19 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Bureaucrat
 		void	decrementGrade();
 
 		//Exceptions//
-		class	GradeTooHighExceptio : public std::exception
+		class	GradeTooHighException : public std::exception
 		{
 			public:
 				const char* what() const throw();
