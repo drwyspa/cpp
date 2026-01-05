@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 21:43:34 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/12/05 22:11:41 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2026/01/05 22:51:35 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	Bureaucrat::decrementGrade()
 //Exceptions implementation//
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "Grade is to high!";
+	return "Grade is too high!";
 }
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
@@ -79,4 +79,18 @@ std::ostream	&operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 {
 	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return os;
+}
+
+//Form Sign in
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }

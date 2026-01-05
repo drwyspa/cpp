@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 21:43:24 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/12/05 22:01:19 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2026/01/05 22:42:56 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -37,6 +38,9 @@ class Bureaucrat
 		//Grade change methods//
 		void	incrementGrade();
 		void	decrementGrade();
+
+		//Sign form
+		void	signForm(Form &form);
 
 		//Exceptions//
 		class	GradeTooHighException : public std::exception

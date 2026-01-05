@@ -6,13 +6,14 @@
 #    By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/02 21:42:44 by pjedrycz          #+#    #+#              #
-#    Updated: 2025/12/09 22:41:10 by pjedrycz         ###   ########.fr        #
+#    Updated: 2026/01/05 23:09:25 by pjedrycz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 	ex00
+NAME = 	ex01
 SRC = 	./src/Bureaucrat.cpp \
-		./src/main.cpp
+		./src/main.cpp \
+		./src/Form.cpp
 CC = 	c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

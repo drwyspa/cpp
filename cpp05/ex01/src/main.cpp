@@ -6,129 +6,88 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 21:43:46 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/12/09 22:47:10 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2026/01/05 23:03:23 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "../inc/Bureaucrat.hpp"
+#include "../inc/Form.hpp"
 
 int	main()
-{
-	//#1 - creating the object//
+{ 
+	std::cout << "TEST #1: Creating correct form" << std::endl; 
 	try
 	{
-		Bureaucrat b1("Zdzislawa", 42);
-		std::cout << "Test #1: " << b1 << std::endl;
+		Form f1("TaxForm", 50, 25);
+		std::cout << f1 << std::endl;
 	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Test #1 generic exception: " << e.what() << std::endl;
-	}
-
-	//#2 - wrong range constructor (grade is too high)//
+	catch (const std::exception &e) 
+	{ 
+		std::cerr << "Exception: " << e.what() << std::endl;
+	} 
+	
+	std::cout << "\nTEST 2: Creating form with too high grade" << std::endl;
 	try
 	{
-		Bureaucrat b2("Stanislaw", 0);
-		std::cout << "Test #2: " << b2 << std::endl;
+		Form f2("InvalidHigh", 0, 10); // grade < 1 
+		std::cout << f2 << std::endl;
 	}
-	catch (const Bureaucrat::GradeTooHighException &e)
+	catch (const std::exception &e)
 	{
-		std::cerr << "Test #2 range exception: " << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
-	catch (const Bureaucrat::GradeTooLowException &e)
-	{
-		std::cerr << "Test #2 range exception: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Test #2 generic exception: " << e.what() << std::endl;
-	}
-
-	//#3 - wrong range constructor (grade is too low)//
+	
+	std::cout << "\nTEST #3: Creating form with grade too low" << std::endl;
 	try
 	{
-		Bureaucrat b3("Antoni", 200);
-		std::cout << "Test #3: " << b3 << std::endl;
+		Form f3("InvalidLow", 100, 200); // grade > 150
+		std::cout << f3 << std::endl;
 	}
-	catch (const Bureaucrat::GradeTooHighException &e)
+	catch (const std::exception &e) 
 	{
-		std::cerr << "Test #1 range exception: " << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
-	catch (const Bureaucrat::GradeTooLowException &e)
-	{
-		std::cerr << "Test #1 range exception: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Test #1 generic exception: " << e.what() << std::endl;
-	}
-
-	//#4 - increment in correct range//
+	
+	std::cout << "\nTEST #4: Sign up the form correctly" << std::endl;
 	try
 	{
-		Bureaucrat b4("Zbigniewa", 2);
-		std::cout << "Test #4 start: " << b4 << std::endl;
-		b4.incrementGrade(); //increment from 2 to 1
-		std::cout << "test #4 after incrementation: " << b4 << std::endl;
+		Bureaucrat b1("Alice", 40);
+		Form f4("TravelPermit", 50, 20);
+		std::cout << b1 << std::endl;
+		std::cout << f4 << std::endl;
+		b1.signForm(f4); // should works
+		std::cout << f4 << std::endl;
 	}
-	catch (std::exception &e)
+	catch (const std::exception &e)
 	{
-		std::cerr << "Test #4 generic exception: " << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
-
-	//#5 - decrement in correct range//
+	
+	std::cout << "\nTEST #5: Too low grade Bureaucrat trying to sign the form" << std::endl;
 	try
 	{
-		Bureaucrat b5("Adam", 2);
-		std::cout << "Test #5 start: " << b5 << std::endl;
-		b5.incrementGrade(); //increment from 2 to 1
-		std::cout << "test #5 after decrementation: " << b5 << std::endl;
+		Bureaucrat b2("Bob", 120);
+		Form f5("SecretDocument", 30, 10);
+		std::cout << b2 << std::endl; std::cout << f5 << std::endl;
+		b2.signForm(f5); // shouldn't work
+		std::cout << f5 << std::endl;
 	}
-	catch (std::exception &e)
+	catch (const std::exception &e)
 	{
-		std::cerr << "Test #5 generic exception: " << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
-
-	//#6 - increment too high over the range//
+	
+	std::cout << "\nTEST #6: Signing the form twice" << std::endl;
 	try
 	{
-		Bureaucrat b6("Magdalena", 1);
-		std::cout << "Test #6 start: " << b6 << std::endl;
-		b6.incrementGrade();//expecting Grade too high exception.
-		std::cout << "Test #6 after the incrementation: " << b6 << std::endl;
+		Bureaucrat b3("Charlie", 1);
+		Form f6("TopSecret", 10, 5);
+		b3.signForm(f6); // OK b3.signForm(f6); // second time — should throw a warinig
 	}
-	catch (const Bureaucrat::GradeTooHighException &e)
+	catch (const std::exception &e)
 	{
-		std::cerr << "Test #6 range exception: " << e.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &e)
-	{
-		std::cerr << "Test #6 range exception: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Test #6 generic exception: " << e.what() << std::endl;
-	}
-
-	//#7 - decrement too low over the range//
-	try
-	{
-		Bureaucrat b7("Leonard", 150);
-		std::cout << "Test #7 start: " << b7 << std::endl;
-		b7.decrementGrade();//expecting Grade too low exception.
-		std::cout << "Test #7 after the incrementation: " << b7 << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooHighException &e)
-	{
-		std::cerr << "Test #7 range exception: " << e.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &e)
-	{
-		std::cerr << "Test #7 range exception: " << e.what() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << "Test #7 generic exception: " << e.what() << std::endl;
+		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 	return 0;
 }

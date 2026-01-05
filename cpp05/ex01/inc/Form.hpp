@@ -6,7 +6,7 @@
 /*   By: pjedrycz <p.jedryczkowski@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 21:03:21 by pjedrycz          #+#    #+#             */
-/*   Updated: 2025/12/29 22:37:27 by pjedrycz         ###   ########.fr       */
+/*   Updated: 2026/01/05 23:07:02 by pjedrycz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ class	Form
 		Form &operator=(const Form &other);
 		~Form();
 
+		const std::string	&getName() const;
+		bool				getIsSigned() const;
+		int					getSignGrade() const;
+		int					getExecGrade() const;
+		
 		void	beSigned(const Bureaucrat &bureaucrat);
 
 		class	GradeTooHighException : public std::exception
